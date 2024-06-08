@@ -11,8 +11,7 @@ install: requirements.txt |
 test: install  
 	python -m pytest -vv ./tests/  
 
-clean:
-	rm -rf *pycache*  
+ 
 
 run:
 	python app.py 
