@@ -1,4 +1,4 @@
-name: Python application
+name: Makefile Basic Python 
 
 on:
   push:
@@ -6,27 +6,18 @@ on:
   pull_request:
     branches: [ "main","master" ]
 
-#trigger:
-#  branches:
-#    include:
-#    - master
-#    - main
-    
-
 jobs:
   build:
 
     runs-on: ubuntu-latest
 
     steps:
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v3
-      with:
-        python-version: "3.10"
-          
+    - uses: actions/checkout@v4
+ 
+
     - name: Install dependencies
       run: make install 
-      
+ 
     - name: Format
       run: make format 
       
